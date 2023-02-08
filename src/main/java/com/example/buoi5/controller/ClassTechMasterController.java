@@ -1,6 +1,7 @@
 package com.example.buoi5.controller;
 
 import com.example.buoi5.model.ClassTechMaster;
+import com.example.buoi5.model.DTO.ClassDTO;
 import com.example.buoi5.model.Teacher;
 import com.example.buoi5.repository.ClassTechMasterRepository;
 import com.example.buoi5.repository.TeacherRepository;
@@ -23,7 +24,7 @@ public class ClassTechMasterController {
     }
 
     @PostMapping("/class/insert")
-    public ResponseEntity<ClassTechMaster> insertClass(@RequestBody ClassTechMaster newClassTechMaster){
+    public ResponseEntity<?> insertClass(@RequestBody ClassDTO newClassTechMaster){
         if (classTechMasterRepository.findById(newClassTechMaster.getId()).isPresent()){
             ClassTechMaster classTechMaster = classTechMasterRepository.findById(newClassTechMaster.getId()).get();
             classTechMaster.setName(newClassTechMaster.getName());
@@ -42,7 +43,7 @@ public class ClassTechMasterController {
             classTechMaster.setTeachers(newClassTechMaster.getTeachers());
             classTechMasterRepository.save(classTechMaster);
         }
-        return ResponseEntity.ok(classTechMasterRepository.findById(newClassTechMaster.getId()).get());
+        return ResponseEntity.ok("OK");
     }
 
 }

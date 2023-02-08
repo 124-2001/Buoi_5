@@ -50,9 +50,9 @@ public class Buoi5Application implements CommandLineRunner {
         classTechMaster.setTeachers(Set.of(teacher,teacher2));
 
         teacherRepository.saveAll(Arrays.asList(teacher,teacher2));
-        classTechMasterRepository.save(classTechMaster);*/
+        classTechMasterRepository.save(classTechMaster);
 
-        /*Course course = new Course();
+        *//*Course course = new Course();
         course.setNumberOfLecture(100);
         Course course1 = new Course();
         course1.setNumberOfLecture(200);
@@ -70,8 +70,8 @@ public class Buoi5Application implements CommandLineRunner {
         student1.setCourses(Set.of(course1,course));
 
         courseRepository.saveAll(Arrays.asList(course,course1));
-        studentRepository.saveAll(Arrays.asList(student,student1));*/
-
+        studentRepository.saveAll(Arrays.asList(student,student1));*//*
+*/
 
     }
 }
